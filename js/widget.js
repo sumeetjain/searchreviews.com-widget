@@ -1,6 +1,6 @@
 // Get a no-nonsense string of keywords
 function srGetKeywords(elementID){
-	var rawString = document.getElementById(elementID).innerText.toLowerCase();
+	var rawString = document.getElementById(elementID).innerHTML.toLowerCase();
 	var cleanString = rawString.replace(/the/g, "");
 	return cleanString
 }

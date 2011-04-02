@@ -1,77 +1,69 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+   "http://www.w3.org/TR/html4/loose.dtd">
+
+<html lang="en">
 <head>
-  <meta charset='utf-8'>
-
-  <title>sumeetjain/searchreviews.com-widget @ GitHub</title>
-
-  <style type="text/css">
-    body {
-      margin-top: 1.0em;
-      background-color: #915d83;
-      font-family: Helvetica, Arial, FreeSans, san-serif;
-      color: #ffffff;
-    }
-    #container {
-      margin: 0 auto;
-      width: 700px;
-    }
-    h1 { font-size: 3.8em; color: #6ea27c; margin-bottom: 3px; }
-    h1 .small { font-size: 0.4em; }
-    h1 a { text-decoration: none }
-    h2 { font-size: 1.5em; color: #6ea27c; }
-    h3 { text-align: center; color: #6ea27c; }
-    a { color: #6ea27c; }
-    .description { font-size: 1.2em; margin-bottom: 30px; margin-top: 30px; font-style: italic;}
-    .download { float: right; }
-    pre { background: #000; color: #fff; padding: 15px;}
-    hr { border: 0; width: 80%; border-bottom: 1px solid #aaa}
-    .footer { text-align:center; padding-top:30px; font-style: italic; }
-  </style>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>Some third-party page</title>
 </head>
-
 <body>
-  <a href="http://github.com/sumeetjain/searchreviews.com-widget"><img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub" /></a>
 
-  <div id="container">
+<style type="text/css" media="screen">
+	.searchReviewsLink{
+		display: block;
+	}
+	.searchReviewsWidget{
+		position: absolute;
+		width: 700px;
+		height: 400px;
+		top: 100px;
+		left: 50%;
+		margin-left: -350px;
+		border: 2px solid #ccc;
+		background: #fff;
+		-moz-box-shadow: 0 0 7px #ccc;
+		-webkit-box-shadow: 0 0 7px #ccc;
+		box-shadow: 0 0 7px #ccc;
+	}
+	.searchReviewsWidget iframe{
+		border: 0;
+		overflow: hidden;
+	}
+	.searchReviewsCloseLink{
+		display: block;
+		border-bottom: 1px solid #ccc;
+		padding: 2px;
+		text-align: center;
+		text-transform: uppercase;
+		font-size: 10px;
+		font-family: 'Lucida Sans', 'Lucida Sans Demi', 'Lucida Grande', Arial, Helvetica, sans-serif;
+		font-weight: bold;
+		color: #999;
+		cursor: pointer;
+	}
+	.searchReviewsCloseLink:hover{
+		color: #666;
+		background: #eee;
+	}
+</style>
 
-    <div class="download">
-      <a href="http://github.com/sumeetjain/searchreviews.com-widget/zipball/master">
-        <img border="0" width="90" src="http://github.com/images/modules/download/zip.png"></a>
-      <a href="http://github.com/sumeetjain/searchreviews.com-widget/tarball/master">
-        <img border="0" width="90" src="http://github.com/images/modules/download/tar.png"></a>
-    </div>
+<script type="text/javascript" charset="utf-8" src="js/widget.js"></script>
 
-    <h1><a href="http://github.com/sumeetjain/searchreviews.com-widget">searchreviews.com-widget</a>
-      <span class="small">by <a href="http://github.com/sumeetjain">sumeetjain</a></span></h1>
+<h1>Some reviews website</h1>
 
-    <div class="description">
-      JS widget for third parties to display SearchReviews.com content
-    </div>
+<h2 id="description">The iPhone 3G</h2>
+<a class="searchReviewsLink" href="#" onclick="srResultsWindow(srGetKeywords('description'), 'description')">There are ## reviews.</a>
 
-    <h2>Authors</h2>
-<p>Sumeet Jain (sumeet@sumeetjain.com)<br/><br/>      </p>
-<h2>Contact</h2>
-<p>Sumeet Jain (sumeet@sumeetjain.com)<br/>      </p>
+<h2 id="description2">The iPad</h2>
+<a class="searchReviewsLink" href="#" onclick="srResultsWindow(srGetKeywords('description2'), 'description2')">There are ## reviews.</a>
+
+<h2 id="description3">The Zune</h2>
+<a class="searchReviewsLink" href="#" onclick="srResultsWindow(srGetKeywords('description3'), 'description3')">There are ## reviews.</a>
 
 
-    <h2>Download</h2>
-    <p>
-      You can download this project in either
-      <a href="http://github.com/sumeetjain/searchreviews.com-widget/zipball/master">zip</a> or
-      <a href="http://github.com/sumeetjain/searchreviews.com-widget/tarball/master">tar</a> formats.
-    </p>
-    <p>You can also clone the project with <a href="http://git-scm.com">Git</a>
-      by running:
-      <pre>$ git clone git://github.com/sumeetjain/searchreviews.com-widget</pre>
-    </p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 
-    <div class="footer">
-      get the source code on GitHub : <a href="http://github.com/sumeetjain/searchreviews.com-widget">sumeetjain/searchreviews.com-widget</a>
-    </div>
-
-  </div>
-
-  
 </body>
 </html>

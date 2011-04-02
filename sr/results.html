@@ -1,0 +1,150 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="description" content="Search Reviews" />
+<meta name="keywords" content="Search Reviews, SR" />
+<title>Search Results | Search Reviews</title>
+<link rel="stylesheet" href="css/style.css" type="text/css" media="screen" /> 
+<script type="text/javascript" src="../scripts/jquery-1.4.3.min.js"></script>
+<script type="text/javascript" src="../scripts/curvy-corners/curvycorners.src.js"></script>
+<!--[if lt IE 9]>
+<script type="text/javascript">
+window.onload = function() {
+    var curves = { tl: { radius: 6 },tr: { radius: 6 },bl: { radius: 6 },br: { radius: 6 }, antiAlias: true }
+    var divObj = document.getElementById("div");
+    curvyCorners(curves, ".middleContainer");
+	var widget = { tl: { radius: 5 },tr: { radius: 5 },bl: { radius: 5 },br: { radius: 5 }, antiAlias: true }
+	curvyCorners(widget, ".widget-publisher, input.txtField");
+	var searchField = { tl: { radius: 3 },tr: { radius: 3 },bl: { radius: 3 },br: { radius: 3 }, antiAlias: true }
+	curvyCorners(searchField, ".sr_container, .ask-ur-friend");
+	var headings = { tl: { radius: 3 },tr: { radius: 3 }, antiAlias: true }
+	curvyCorners(headings, ".heading, .headerContainer");
+  }
+</script>
+<![endif]-->
+<script type="text/javascript" src="../scripts/popup/jquery.bpopup-0.4.1.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){    
+    $("#em2c").bind("click", function(){
+                $(".ask-ur-friend").bPopup({fadeSpeed:1,followSpeed:1,opacity:0.8,modalClose:false});
+                return false
+            });
+	 $(".feedbackBtn").bind("click", function(){
+                $(".feedbackForm").bPopup({fadeSpeed:1,followSpeed:1,opacity:0.8,modalClose:false});
+                return false
+            });
+	$("#subtLink").bind("click", function(){
+                $(".sr_container").bPopup({fadeSpeed:1,followSpeed:1,opacity:0.8,modalClose:false});
+                return false
+            });
+	});
+</script>
+<script type="text/javascript" src="../scripts/collapse/jquery.collapsor.min.js"></script>
+<script type="text/javascript">
+    $(function () {
+        $('.options').hide();
+        $('ul.collapse a').collapsor();
+        $('ul.collapse a').click(function () {           
+            var currentItem = this;
+            $('ul.collapse li a').each(function () {
+                if (this != currentItem) {
+                    $(this).prev().removeClass('active');
+                    $(this).removeClass('open');
+                    $(this).next().slideUp();
+                }
+            });
+            $(this).prev().toggleClass('active', '');         
+        });
+    });
+</script>
+<!--[if IE 7]>
+	<link rel="stylesheet" href="css/style.css" type="text/css"  />
+<![endif]-->
+</head>
+<body >
+<div class="iframereviews">
+  <p class="no-of-Reviews"><span>204</span> reviews for <span>Masticating Juicers</span> including <span>Philips</span> <span class="included">including 10 from your friends</span></p>
+  <!-- 11 Jan updates start content changes-->
+  <!--(11 jan) change  the class name textHolder to textHoldernew-->
+  <!--clear contents -->
+  <div class="showingResutls">
+    <p class="text">Showing 4 to 12 of 204</p>
+    <p class="pagination"><a href="#" class="prev">Previous</a> <a href="#">1</a> <a href="#">2</a> <a href="#" class="selected">3</a> <a href="#">4</a> <a href="#">5</a> <a href="#">6</a> <a href="#" class="next">Next</a></p>
+  </div>
+  <!-- !7 Jan changes - Start --><!-- POPUP Modal starts here -->
+  <div class="ask-ur-friend" style="display:none">
+    <div class="headerContainer">
+      <h2>Ask your friends</h2>
+      <a class="bClose"><img src="images/Close_Btn.png" width="17" height="17" alt="closeBtn" /></a></div>
+    <div class="content">
+      <p class="title">Find out what your friends think, ask them about</p>
+      <input type="text" class="questionTitle" value="eg: Philips Juicers" onfocus="if(this.value=='eg: Philips Juicers')this.value=''" onblur="if(this.value=='')this.value='eg: Philips Juicers'"  />
+      <textarea name="textarea" cols="25" rows="3">I would like to buy this, does anyone have any feedback on this, I have tried other brands - none have eve lasted over a month.</textarea>
+      <p class="information">Clicking on Submit will post this question to the selected social network account and get you the best answers.</p>
+      <div class="share">
+        <p class="TXT_share">Yes, Share this question on my social networks</p>
+        <p class="shareComments"> <a class="fbook">
+          <input type="checkbox" />
+          </a> <a class="twitter">
+            <input type="checkbox" />
+            </a> <a class="linkedIn">
+              <input type="checkbox" />
+            </a></p>
+        <input type="button" class="submit" value="Submit" />
+      </div>
+    </div>
+  </div>
+  <!--end of popup modals--><!--clear contents -->
+  <div id="reviewList">
+    <!-- 17 Jan changes - End -->
+    <ul class="lists">
+      <li>
+        <h2><a href="#">Philips HR 1861</a></h2>
+        <p class="prdTitle"><span>for</span> Philips Product, Philips Music Player, Philips Juicer</p>
+        <div class="level2">
+          <p class="rated"><a href="#" class="rate">&nbsp;</a><a href="#" class="rate">&nbsp;</a><a href="#" class="rate">&nbsp;</a><a href="#">&nbsp;</a><a href="#">&nbsp;</a></p>
+          <p class="relatedLinks">Amazon.com,  by Raymond James, Boston, MA | Today @ 1:15 AM</p>
+        </div>
+        <div class="content">
+          <!-- <div class="imgContainer">&nbsp;</div> -->
+          <p class="fullPost">Having done hours of research into the many juicers available, we opted to get this one, largely based on the fact that it has won awards from various magazines, most notably WHICH?, showing it to be of a certain standard. Apparently this juicer ... <a href="#" class="more">Read more</a></p>
+        </div>
+        <!--end of content-->
+        <p class="postLinks"><a href="#" class="rateYes disabled">32</a> <a href="#" class="rateNo disabled">12</a> <a href="#" class="shareDis">Share&nbsp;This</a> <a href="#" class="comments">23&nbsp;Comments</a></p>
+      </li>
+      <li>
+        <h2><a href="#">Philips HR 1861</a></h2>
+        <p class="prdTitle"><span>for</span> Philips Product, Philips Juicer</p>
+        <div class="level2">
+          <p class="rated"><a href="#" class="rate disabled">&nbsp;</a><a href="#" class="rate disabled">&nbsp;</a><a href="#" class="rate">&nbsp;</a><a href="#">&nbsp;</a><a href="#">&nbsp;</a></p>
+          <p class="relatedLinks">Amazon.com,  by Raymond James, Boston, MA | Today @ 1:15 AM</p>
+        </div>
+        <div class="content">
+          <div class="imgContainer"><img src="images/product.jpg" width="136" height="106" alt="products" /></div>
+          <p class="smallpost">Equipped with powerful 650W motor motor and unique micro mesh filter, the new Philips juicer, HR1858 literally swallows whole fruits and vegetables and squeezes every drop. You don't have to cut and chop anymore. nd thanks to the capacity larger than most Philips juicers, and feeding tube with 75 mm diameter, you can get plenty of juice and fast.... Equipped with powerful 650W motor motor and unique micro mesh filter, the new Philips juicer, HR1858 literally swallows whole fruits and vegetables and squeezes every drop. You don't have to cut and chop anymore. nd thanks to the capacity larger than most Philips juicers, and feeding tube with 75 mm diameter, you can get plenty of juice and fast.... Equipped with powerful 650W motor motor and unique micro mesh filter, the new Philips juicer, HR1858 literally swallows whole fruits and vegetables and squeezes every drop. You don't have to cut and chop anymore. nd thanks to the capacity larger than most Philips juicers, and feeding tube with 75 mm diameter, you can get plenty of juice and fast....<a href="#" class="more">Read more</a></p>
+        </div>
+        <!--end of mainContent-->
+        <p class="postLinks"><a href="#" class="rateYes disabled">32</a> <a href="#" class="rateNo disabled">12</a> <a href="#" class="shareDis">Share&nbsp;This</a> <a href="#" class="comments">23&nbsp;Comments</a></p>
+      </li>
+      <li>
+        <h2><a href="#">Philips HR 1861</a></h2>
+        <p class="prdTitle"><span>for</span> Philips Product, Product title 2, Product title 3</p>
+        <div class="level2">
+          <p class="rated"><a href="#" class="rate">&nbsp;</a><a href="#" class="rate">&nbsp;</a><a href="#" class="rate">&nbsp;</a><a href="#">&nbsp;</a><a href="#">&nbsp;</a></p>
+          <p class="relatedLinks">Amazon.com,  by Raymond James, Boston, MA | Today @ 1:15 AM</p>
+        </div>
+        <div class="content">
+          <!-- <div class="imgContainer">&nbsp;</div> -->
+          <p class="fullPost">Having done hours of research into the many juicers available, we opted to get this one, largely based on the fact that it has won awards from various magazines, most notably WHICH?, showing it to be of a certain standard. Apparently this juicer ... <a href="#" class="more">Read more</a></p>
+        </div>
+        <!--end of content-->
+        <p class="postLinks"><a href="#" class="rateYes disabled">32</a> <a href="#" class="rateNo disabled">12</a> <a href="#" class="shareDis">Share&nbsp;This</a> <a href="#" class="comments">23&nbsp;Comments</a></p>
+      </li>
+    </ul>
+    <!-- Pagination for content -->
+    <p class="pagination"><a href="#" class="prev">Previous</a> <a href="#">1</a> <a href="#">2</a> <a href="#" class="selected">3</a> <a href="#">4</a> <a href="#">5</a> <a href="#">6</a> <a href="#" class="next">Next</a></p>
+  </div>
+</div>
+</body>
+</html>

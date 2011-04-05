@@ -23,6 +23,7 @@ function srResultsWindow(keywords, UID){
 		// resultsIframe.src = 'http://searchreviews.com/customsearch.jsp?reviews=' + keywords;
 		resultsIframe.src = 'sr/results.html?' + keywords;
 		resultsIframe.scrolling = 'no';
+		resultsIframe.frameBorder = 0;
 		
 		// Create the Close Overlay link
 		function closeResults(){
@@ -31,7 +32,7 @@ function srResultsWindow(keywords, UID){
 		var resultsClose = document.createElement('a');
 		resultsClose.className = 'searchReviewsCloseLink';
 		resultsClose.innerHTML = "Close";
-		resultsClose.addEventListener("click", closeResults, false);
+		resultsClose.onclick = closeResults;
 		
 		// Add the above elements to the page
 		resultsWindow.appendChild(resultsClose);

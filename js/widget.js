@@ -39,6 +39,4 @@ function srResultsWindow(keywords, UID){
 		resultsWindow.appendChild(resultsIframe);
 		document.getElementsByTagName('body')[0].appendChild(resultsWindow);
 	}
-	
-	return false;
 }

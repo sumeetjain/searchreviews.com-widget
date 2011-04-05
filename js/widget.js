@@ -22,8 +22,7 @@ function srResultsWindow(keywords, UID){
 		var resultsIframe = document.createElement('iframe');
 		// resultsIframe.src = 'http://searchreviews.com/customsearch.jsp?reviews=' + keywords;
 		resultsIframe.src = 'sr/results.html?' + keywords;
-		resultsIframe.width = 698;
-		resultsIframe.height = 398;
+		resultsIframe.scrolling = 'no';
 		
 		// Create the Close Overlay link
 		function closeResults(){

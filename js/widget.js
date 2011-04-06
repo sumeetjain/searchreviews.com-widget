@@ -50,7 +50,7 @@ function srCreateLink(elementID){
 	var resultsLink = document.createElement('a');
 	resultsLink.className = 'searchReviewsLink';
 	resultsLink.href = '#';
-	resultsLink.innerHTML = 'I Found ## reviews.';
+	resultsLink.innerHTML = 'Found ## reviews.';
 	resultsLink.onclick = function(){
 		srResultsWindow(srGetKeywords(elementID), elementID);
 		return false;

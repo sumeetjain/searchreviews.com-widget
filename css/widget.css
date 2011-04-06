@@ -1,0 +1,51 @@
+.searchReviewsLink{
+	display: block;
+	font-family: 'Lucida Sans', 'Lucida Sans Demi', 'Lucida Grande', Arial, Helvetica, sans-serif;
+	text-decoration: none;
+	font-size: 12px;
+	color: #454545;
+	background: url(sr_review_count_bg.png) no-repeat;
+	height: 42px;
+	line-height: 67px;
+	padding-left: 19px;
+}
+.searchReviewsLink:hover{
+	color: #000;
+}
+#searchReviewsWidgetContainer{
+	position: absolute;
+	width: 720px;
+	height: 400px;
+	top: 100px;
+	left: 50%;
+	margin-left: -350px;
+	border: 2px solid #aaa;
+	background: #fff;
+	-moz-box-shadow: 0 0 7px #999;
+	-webkit-box-shadow: 0 0 7px #999;
+	box-shadow: 0 0 7px #999;
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+#searchReviewsWidgetContainer iframe{
+	border: none;
+	width: 698px;
+	height: 1200px;
+	background: #fff;
+}
+#searchReviewsCloseLink{
+	display: block;
+	border-bottom: 1px solid #ccc;
+	padding: 2px;
+	text-align: center;
+	text-transform: uppercase;
+	font-size: 10px;
+	font-family: 'Lucida Sans', 'Lucida Sans Demi', 'Lucida Grande', Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	color: #999;
+	cursor: pointer;
+}
+#searchReviewsCloseLink:hover{
+	color: #666;
+	background: #eee;
+}

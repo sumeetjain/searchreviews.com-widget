@@ -5,7 +5,12 @@ function srCreateLink(elementID){
 	
 	// Get a no-nonsense string of keywords
 	function srGetKeywords(elementID){
-		var rawString = document.getElementById(elementID).innerHTML.toLowerCase(); // This needs to be innerText()
+		if (document.all){
+			var rawString = document.getElementById(elementID).innerText.toLowerCase();
+		}
+		else{
+			var rawString = document.getElementById(elementID).textContent.toLowerCase();
+		}
 		var cleanString = rawString.replace(/the/g, "");
 		return cleanString;
 	}

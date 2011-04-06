@@ -1,3 +1,27 @@
+if(!document.getElementById('searchReviewsWidgetContainer')){
+	var resultsContainer = document.createElement('div');
+	resultsContainer.id = 'searchReviewsWidgetContainer';
+	resultsContainer.style.display = "none";
+	
+	// Create a div for the eventual iframe
+	var resultsSubcontainer = document.createElement('div');
+	resultsSubcontainer.id = 'searchReviewsWidgetSubcontainer';
+	
+	// Create the Close Overlay link
+	function closeResults(){
+		document.getElementById('searchReviewsWidgetContainer').style.display = "none";
+	}
+	var resultsClose = document.createElement('a');
+	resultsClose.id = 'searchReviewsCloseLink';
+	resultsClose.innerHTML = "Close";
+	resultsClose.onclick = closeResults;
+
+	// Add the above elements to the page
+	resultsContainer.appendChild(resultsClose);
+	resultsContainer.appendChild(resultsSubcontainer);
+	document.getElementsByTagName('body')[0].appendChild(resultsContainer);
+}
+
 function srCreateLink(elementID){
 	// ################
 	// INNER FUNCTIONS:
@@ -17,38 +41,19 @@ function srCreateLink(elementID){
 	
 	// Show iframe window
 	function srResultsWindow(keywords, UID){	
-		// If the results have already been shown
-		if (document.getElementById('searchReviewsWidget_' + UID)){
-			document.getElementById('searchReviewsWidget_' + UID).style.display = 'block';
-		}
-		// Else the results are being shown for the first time
-		else{
-			// Create the container for the overlay
-			var resultsWindow = document.createElement('div');
-			resultsWindow.className = 'searchReviewsWidget';
-			resultsWindow.id = 'searchReviewsWidget_' + UID;
+		// Create another container for the overlay
+		var resultsWindow = document.createElement('div');
 
-			// Create the iframe that contains the results
-			var resultsIframe = document.createElement('iframe');
-			// resultsIframe.src = 'http://searchreviews.com/customsearch.jsp?reviews=' + keywords;
-			resultsIframe.src = 'sr/results.html?' + keywords;
-			resultsIframe.scrolling = 'no';
-			resultsIframe.frameBorder = 0;
+		// Create the iframe that contains the results
+		var resultsIframe = document.createElement('iframe');
+		// resultsIframe.src = 'http://searchreviews.com/customsearch.jsp?reviews=' + keywords;
+		resultsIframe.src = 'sr/results.html?' + keywords;
+		resultsIframe.scrolling = 'no';
+		resultsIframe.frameBorder = 0;
 
-			// Create the Close Overlay link
-			function closeResults(){
-				resultsWindow.style.display = "none";
-			}
-			var resultsClose = document.createElement('a');
-			resultsClose.className = 'searchReviewsCloseLink';
-			resultsClose.innerHTML = "Close";
-			resultsClose.onclick = closeResults;
-
-			// Add the above elements to the page
-			resultsWindow.appendChild(resultsClose);
-			resultsWindow.appendChild(resultsIframe);
-			document.getElementsByTagName('body')[0].appendChild(resultsWindow);
-		}
+		// Add the above element to the overlay
+		resultsWindow.appendChild(resultsIframe);
+		document.getElementById('searchReviewsWidgetSubcontainer').innerHTML = resultsWindow.innerHTML;
 	}
 	
 	// Create a link to the reviews overlay
@@ -58,6 +63,7 @@ function srCreateLink(elementID){
 	resultsLink.innerHTML = 'Found ## reviews.';
 	resultsLink.onclick = function(){
 		srResultsWindow(srGetKeywords(elementID), elementID);
+		document.getElementById('searchReviewsWidgetContainer').style.display = "block";
 		return false;
 	}
 	

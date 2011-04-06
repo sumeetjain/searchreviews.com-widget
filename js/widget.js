@@ -75,6 +75,7 @@ var getElementsByClassName = function (className, tag, elm){
 	return getElementsByClassName(className, tag, elm);
 };
 
+// Create the super-container
 if(!document.getElementById('searchReviewsWidgetContainer')){
 	var resultsContainer = document.createElement('div');
 	resultsContainer.id = 'searchReviewsWidgetContainer';
@@ -103,12 +104,38 @@ function srCreateLink(resultsLink){
 	
 	// Get a no-nonsense string of keywords
 	function srGetKeywords(elementID){
-		if (document.all){
-			var rawString = document.getElementById(elementID).innerText.toLowerCase();
+		// If there's no elementID provided, or if it's not found...
+		if (elementID == null || document.getElementById(elementID) == null){
+			// Try using the <h1>
+			if (document.getElementsByTagName('h1')[0]){
+				if (document.all){
+					var rawString = document.getElementsByTagName('h1')[0].innerText.toLowerCase();
+				}
+				else{
+					var rawString = document.getElementsByTagName('h1')[0].textContent.toLowerCase();
+				}
+			}
+			// Or try the <meta name="description" />
+			else{
+					var metaTags = document.getElementsByTagName('meta');
+					for(var i = metaTags.length - 1; i >= 0; --i){
+						
+						if(metaTags[i].name == 'description'){
+							var rawString = metaTags[i].content;
+						}
+					}
+			}
 		}
+		// Hopefully there's an elementID, though:
 		else{
-			var rawString = document.getElementById(elementID).textContent.toLowerCase();
+			if (document.all){
+				var rawString = document.getElementById(elementID).innerText.toLowerCase();
+			}
+			else{
+				var rawString = document.getElementById(elementID).textContent.toLowerCase();
+			}
 		}
+		
 		var cleanString = rawString.replace(/the/g, "");
 		return cleanString;
 	}

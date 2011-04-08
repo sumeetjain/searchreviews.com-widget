@@ -197,13 +197,18 @@ p.pagination a.next {
 	float:left;
 	padding:13px 0 0;
 }
+#reviewList ul.lists{
+	margin-bottom: 15px;
+}
 #reviewList ul, #reviewList ul li {
 	width:100%;
 	float:left;
 	display:block;
 }
 #reviewList ul li {
-	padding-bottom:22px;
+	padding-bottom:0px;
+	margin-bottom: 10px;
+	border-bottom:1px dotted #e4e4e4;
 }
 #reviewList ul li h2 a {
 	display:block;
@@ -217,12 +222,12 @@ p.pagination a.next {
 }
 #reviewList ul li p.prdTitle {
 	display:block;
-	width:100%;
+	width:48%;
 	float:left;
 	font:12px Arial, Helvetica, sans-serif;
 	color:#45D0DF;
 	line-height:21px;
-	margin:5px 0 0;
+	margin: 0;
 }
 #reviewList ul li p.prdTitle span {
 	font-size:11px;
@@ -231,7 +236,7 @@ p.pagination a.next {
 #reviewList ul li div.level2 {
 	width:100%;
 	float:left;
-	margin:7px 0 16px;
+	margin:7px 0 8px;
 }
 #reviewList ul li p.fullPost {
 	width:100%;
@@ -239,7 +244,7 @@ p.pagination a.next {
 	font-size:12px;
 	line-height:18px;
 	color:#4e4d4d;
-	padding-bottom:20px;
+	padding-bottom:10px;
 }
 #reviewList ul li p.smallpost {
 	display:block;
@@ -269,24 +274,17 @@ p.pagination a.next {
 }
 #reviewList ul li p.relatedLinks {
 	font-size:10px;
-	min-width:180px;
+	width: 51%;
 	display:block;
 	text-align:right;
 	float:right;
 	color:#999;
-	margin:0 8px 0 0;
+	margin:4px 8px 0 0;
 }
 #reviewList ul li a.more {
 	font-size:11px;
 	color:#3ca2b9;
 	text-decoration:underline
-}
-#reviewList ul li p.postLinks {
-	clear:left;
-	width:100%;
-	float:left;
-	padding:6px 0 13px;
-	border-bottom:1px dotted #e4e4e4;
 }
 p.postLinks a {
 	font-size:10px;

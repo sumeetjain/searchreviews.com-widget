@@ -103,7 +103,7 @@ if(!document.getElementById('searchReviewsWidgetContainer')){
 	var expandResults = document.createElement('a');
 	expandResults.id = 'searchReviewsExpandLink';
 	expandResults.innerHTML = "Expand";
-	expandResults.onclick = expandResultsWindow;
+	expandResults.href = 'http://searchreviews.com';
 
 	// Add the above elements to the page
 	resultsContainer.appendChild(resultsClose);
@@ -170,9 +170,7 @@ function srCreateLink(resultsLink){
 		
 		// Change the "Expand" link to go to the right deep link
 		var expandResults = document.getElementById('searchReviewsExpandLink');
-		expandResults.onclick = function(){
-			window.location = "http://searchreviews.com/search.jsp?reviews=" + keywords;
-		}
+		expandResults.href = "http://searchreviews.com/search.jsp?reviews=" + keywords;
 	}
 	
 	// Update the link to show the reviews overlay

@@ -13,10 +13,10 @@
 	color: #000;
 }
 #searchReviewsWidgetContainer{
-	position: absolute;
+	position: fixed;
 	width: 720px;
 	height: 500px;
-	top: 50px;
+	top: 20px;
 	left: 50%;
 	margin-left: -350px;
 	border: 2px solid #aaa;

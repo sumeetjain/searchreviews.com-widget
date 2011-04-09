@@ -24,18 +24,31 @@
 	-moz-box-shadow: 0 0 7px #999;
 	-webkit-box-shadow: 0 0 7px #999;
 	box-shadow: 0 0 7px #999;
+}
+#searchReviewsWidgetSubcontainer{
+	clear: both;	
+	height: 462px;
 	overflow-y: auto;
 	overflow-x: hidden;
 }
-#searchReviewsWidgetContainer iframe{
+#searchReviewsWidgetSubcontainer iframe{
 	border: none;
 	width: 698px;
 	height: 900px;
 	background: #fff;
 }
-.searchReviewsWidgetSubcontainer{
+#searchReviewsLinksContainer:before,
+#searchReviewsLinksContainer:after {
+	content: ".";
+	display: block;
+	height: 0;
+	visibility: hidden;
 	clear: both;
-	margin-top: 8px;
+	overflow: hidden;
+}
+#searchReviewsLinksContainer {
+	zoom: 1; /* IE < 8 */
+	background: #fff;
 }
 #searchReviewsCloseLink,
 #searchReviewsExpandLink{
@@ -46,11 +59,10 @@
 	padding-top: 17px;
 	overflow: hidden;
 	cursor: pointer;
-	margin: 7px 0 7px 3px;
+	margin: 3px 3px 3px 0;
 }
 #searchReviewsCloseLink{
 	background: url(sr_close_button.gif) no-repeat 0 0;
-	margin-right: 9px;
 }
 #searchReviewsCloseLink:hover{
 	background: url(sr_close_button.gif) no-repeat 0 -17px;

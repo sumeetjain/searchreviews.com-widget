@@ -106,10 +106,15 @@ if(!document.getElementById('searchReviewsWidgetContainer')){
 	expandResults.innerHTML = "Click to expand this window.";
 	expandResults.title = "Expand this window."
 	expandResults.href = 'http://searchreviews.com';
+	
+	// Create a div to contain the Expand/Close links
+	var linksContainer = document.createElement('div');
+	linksContainer.id = 'searchReviewsLinksContainer';
 
 	// Add the above elements to the page
-	resultsContainer.appendChild(resultsClose);
-	resultsContainer.appendChild(expandResults);
+	linksContainer.appendChild(resultsClose);
+	linksContainer.appendChild(expandResults);
+	resultsContainer.appendChild(linksContainer);
 	resultsContainer.appendChild(resultsSubcontainer);
 	document.getElementsByTagName('body')[0].appendChild(resultsContainer);
 }

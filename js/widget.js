@@ -95,9 +95,19 @@ if(!document.getElementById('searchReviewsWidgetContainer')){
 	resultsClose.id = 'searchReviewsCloseLink';
 	resultsClose.innerHTML = "Close";
 	resultsClose.onclick = closeResults;
+	
+	// Create the Expand link
+	function expandResultsWindow(){
+		window.location = "http://searchreviews.com";
+	}
+	var expandResults = document.createElement('a');
+	expandResults.id = 'searchReviewsExpandLink';
+	expandResults.innerHTML = "Expand";
+	expandResults.onclick = expandResultsWindow;
 
 	// Add the above elements to the page
 	resultsContainer.appendChild(resultsClose);
+	resultsContainer.appendChild(expandResults);
 	resultsContainer.appendChild(resultsSubcontainer);
 	document.getElementsByTagName('body')[0].appendChild(resultsContainer);
 }
@@ -157,6 +167,12 @@ function srCreateLink(resultsLink){
 		// Add the above element to the overlay
 		resultsWindow.appendChild(resultsIframe);
 		document.getElementById('searchReviewsWidgetSubcontainer').innerHTML = resultsWindow.innerHTML;
+		
+		// Change the "Expand" link to go to the right deep link
+		var expandResults = document.getElementById('searchReviewsExpandLink');
+		expandResults.onclick = function(){
+			window.location = "http://searchreviews.com/search.jsp?reviews=" + keywords;
+		}
 	}
 	
 	// Update the link to show the reviews overlay

@@ -94,6 +94,7 @@ if(!document.getElementById('searchReviewsWidgetContainer')){
 	var resultsClose = document.createElement('a');
 	resultsClose.id = 'searchReviewsCloseLink';
 	resultsClose.innerHTML = "Close";
+	resultsClose.title = "Click to close this window."
 	resultsClose.onclick = closeResults;
 	
 	// Create the Expand link
@@ -102,7 +103,8 @@ if(!document.getElementById('searchReviewsWidgetContainer')){
 	}
 	var expandResults = document.createElement('a');
 	expandResults.id = 'searchReviewsExpandLink';
-	expandResults.innerHTML = "Expand";
+	expandResults.innerHTML = "Click to expand this window.";
+	expandResults.title = "Expand this window."
 	expandResults.href = 'http://searchreviews.com';
 
 	// Add the above elements to the page

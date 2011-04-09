@@ -33,19 +33,31 @@
 	height: 900px;
 	background: #fff;
 }
-#searchReviewsCloseLink{
+.searchReviewsWidgetSubcontainer{
+	clear: both;
+	margin-top: 8px;
+}
+#searchReviewsCloseLink,
+#searchReviewsExpandLink{
 	display: block;
-	border-bottom: 1px solid #ccc;
-	padding: 2px;
-	text-align: center;
-	text-transform: uppercase;
-	font-size: 10px;
-	font-family: 'Lucida Sans', 'Lucida Sans Demi', 'Lucida Grande', Arial, Helvetica, sans-serif;
-	font-weight: bold;
-	color: #999;
+	float: right;
+	height: 0;
+	width: 17px;
+	padding-top: 17px;
+	overflow: hidden;
 	cursor: pointer;
+	margin: 7px 0 7px 3px;
+}
+#searchReviewsCloseLink{
+	background: url(sr_close_button.gif) no-repeat 0 0;
+	margin-right: 9px;
 }
 #searchReviewsCloseLink:hover{
-	color: #666;
-	background: #eee;
+	background: url(sr_close_button.gif) no-repeat 0 -17px;
+}
+#searchReviewsExpandLink{
+	background: url(sr_expand_button.gif) no-repeat 0 0;
+}
+#searchReviewsExpandLink:hover{
+	background: url(sr_expand_button.gif) no-repeat 0 -17px;
 }

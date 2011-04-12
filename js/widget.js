@@ -182,7 +182,7 @@ function srCreateLink(resultsLink){
 	
 	// Get reviewCount and update the link
 	var request = window.XDomainRequest ? new window.XDomainRequest() : new XMLHttpRequest();
-	var url = 'http://satyadevi.org/_temp.php'; // Change to use keywords later
+	var url = 'http://satyadevi.org/_temp.php?product=' + srGetKeywords(resultsLink.rel) + '&time=' + new Date().getTime();
 
 	if(window.XDomainRequest){
 		request.onload = callback;

@@ -180,12 +180,44 @@ function srCreateLink(resultsLink){
 		expandResults.href = "http://searchreviews.com/search.jsp?reviews=" + keywords;
 	}
 	
-	// Update the link to show the reviews overlay
-	resultsLink.innerHTML = 'Found ## reviews.';
-	resultsLink.onclick = function(){
-		srResultsWindow(srGetKeywords(resultsLink.rel));
-		document.getElementById('searchReviewsWidgetContainer').style.display = "block";
-		return false;
+	// Get reviewCount and update the link
+	var request = window.XDomainRequest ? new window.XDomainRequest() : new XMLHttpRequest();
+	var url = 'http://satyadevi.org/_temp.php'; // Change to use keywords later
+
+	if(window.XDomainRequest){
+		request.onload = callback;
+		request.open("GET", url, true);
+	}
+	else{
+		request.open('GET', url, true);
+		request.onreadystatechange = callbackCheck;
+	}
+	request.send();
+
+	function callbackCheck(){
+		if (request.readyState == 4){
+			if (request.status == 200){
+				callback();
+			}
+			else{
+				alert("Error: request.readyState=" + request.readyState + ", request.status=" + request.status);
+			}
+		}
+	}
+
+	function callback(){
+		srJSON = eval('(' + request.responseText + ')');
+		if (srJSON.reviewCount > 0){
+			resultsLink.innerHTML = 'Found ' + srJSON.reviewCount + ' reviews.';
+			resultsLink.onclick = function(){
+				srResultsWindow(srGetKeywords(resultsLink.rel));
+				document.getElementById('searchReviewsWidgetContainer').style.display = "block";
+				return false;
+			}
+		}
+		else{
+			resultsLink.innerHTML = 'Search for reviews.';
+		}
 	}
 }
 

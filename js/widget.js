@@ -166,8 +166,8 @@ function srCreateLink(resultsLink){
 
 		// Create the iframe that contains the results
 		var resultsIframe = document.createElement('iframe');
-		// resultsIframe.src = 'http://searchreviews.com/customsearch.jsp?reviews=' + keywords;
-		resultsIframe.src = 'sr/results.html?' + keywords;
+		resultsIframe.src = 'http://searchreviews.com/customsearch.jsp?reviews=' + keywords;
+		// resultsIframe.src = 'sr/results.html?' + keywords;
 		resultsIframe.scrolling = 'no';
 		resultsIframe.frameBorder = 0;
 
@@ -182,7 +182,7 @@ function srCreateLink(resultsLink){
 	
 	// Get reviewCount and update the link
 	var request = window.XDomainRequest ? new window.XDomainRequest() : new XMLHttpRequest();
-	var url = 'http://satyadevi.org/_temp.php?product=' + srGetKeywords(resultsLink.rel) + '&time=' + new Date().getTime();
+	var url = 'http://searchreviews.com/api/badge?reviews=' + srGetKeywords(resultsLink.rel) + '&time=' + new Date().getTime();
 
 	if(window.XDomainRequest){
 		request.onload = callback;

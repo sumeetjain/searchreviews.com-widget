@@ -918,6 +918,9 @@ p.pagination a.next {
 #reviewList ul li, #newsList ul li {
 	padding-bottom:22px;
 }
+.iframereviews #reviewList ul li{
+	padding-bottom: 0;
+}
 #reviewList ul li h2 a, #newsList ul li h2 a {
 	display:block;
 	float:left;
@@ -963,6 +966,11 @@ p.pagination a.next {
 	line-height:18px;
 	color:#4e4d4d;
 	padding-bottom:20px;
+}
+.iframereviews #reviewList ul li p.smallpost{
+	float: none;
+	width: auto;
+	padding-bottom: 10px;
 }
 #reviewList ul li p.rated, #srWidget p.rated{
 	width:60px;

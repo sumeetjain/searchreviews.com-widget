@@ -732,6 +732,12 @@ input#searchQuery{
 	width: 200px;
 	font-weight: bold;
 }
+.iframereviews input#searchQuery{
+	overflow-y: visible;
+	display: block;
+	float: left;
+	margin: 0 6px;
+}
 
 
 .textHolder {
@@ -3121,7 +3127,13 @@ p.newrated a{
 }
 
 #search_button{
-	margin-bottom: -10px;
+	display: block;
+	float: left;
+}
+#wid-no-of-Reviews-text{
+	float: left;
+	position: relative;
+	top: 5px;
 }
 #powered_by{
 	display: block;
@@ -3144,7 +3156,11 @@ p.newrated a{
 	font-size:12px;
 	color:#999;
 }
-.wid-no-of-Reviews span {
+.iframereviews .wid-no-of-Reviews{
+	width: 460px;
+	float: none;
+}
+.wid-no-of-Reviews strong {
 	font-size:14px;
 	color:#000;
 	font-weight:bold;

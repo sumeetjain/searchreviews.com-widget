@@ -997,6 +997,13 @@ p.pagination a.next {
 #reviewList ul li p.rated a:hover, #reviewList ul li p.rated a.rate, #srWidget  p.rated a:hover, #srWidget  p.rated a.rate{
 	background-position:0 -10px;
 }
+.iframereviews #reviewList ul li p.rated a:hover, .iframereviews p.rated a:hover{
+	background-position:0 0;
+	cursor: default;
+}
+.iframereviews #reviewList ul li p.rated a.rate, .iframereviews p.rated a.rate{
+	background-position:0 -10px;
+}
 #reviewList ul li p.relatedLinks, #newsList ul li p.relatedLinks {
 	font-size:10px;
 	width: 51%;

@@ -226,5 +226,8 @@ function srCreateLink(resultsLink){
 var allSearchReviewsLinks = getElementsByClassName('searchReviewsLink');
 
 for (var i = allSearchReviewsLinks.length - 1; i >= 0; --i){
+	allSearchReviewsLinks[i].onclick = function(){
+		return false;
+	}
 	srCreateLink(allSearchReviewsLinks[i]);
 }

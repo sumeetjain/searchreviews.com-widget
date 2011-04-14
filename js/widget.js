@@ -106,6 +106,7 @@ if(!document.getElementById('searchReviewsWidgetContainer')){
 	expandResults.innerHTML = "Click to expand this window.";
 	expandResults.title = "Expand this window."
 	expandResults.href = 'http://searchreviews.com';
+	expandResults.target = '_blank';
 	
 	// Create a div to contain the Expand/Close links
 	var linksContainer = document.createElement('div');

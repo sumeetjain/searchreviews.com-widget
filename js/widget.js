@@ -218,6 +218,9 @@ function srCreateLink(resultsLink){
 		}
 		else{
 			resultsLink.innerHTML = 'Search for reviews.';
+			resultsLink.onclick = function(){
+				window.location = "http://searchreviews.com";
+			}
 		}
 	}
 }

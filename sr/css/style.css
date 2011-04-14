@@ -1002,7 +1002,7 @@ p.pagination a.next {
 	cursor: default;
 }
 .iframereviews #reviewList ul li p.rated a.rate, .iframereviews p.rated a.rate{
-	background-position:0 -10px;
+	background-position:0 -10px !important;
 }
 #reviewList ul li p.relatedLinks, #newsList ul li p.relatedLinks {
 	font-size:10px;

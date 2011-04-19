@@ -1,4 +1,4 @@
-document.write('<link rel="stylesheet" href="css/widget.css" type="text/css" media="screen" title="SearchReviews.com" charset="utf-8">');
+document.write('<link rel="stylesheet" href="http://sumeetjain.com/searchreviews.com-widget/css/widget.css" type="text/css" media="screen" title="SearchReviews.com" charset="utf-8">');
 
 // Developed by Robert Nyman, http://www.robertnyman.com
 // Code/licensing: http://code.google.com/p/getelementsbyclassname/

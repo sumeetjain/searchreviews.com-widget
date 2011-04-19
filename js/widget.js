@@ -133,13 +133,13 @@ window.onload = function(){
 
 		// Get a no-nonsense string of keywords
 		function srGetKeywords(elementID){
-			console.log("Fetching keywords for " + elementID + " ...");
+			console.log("  Fetching keywords for " + elementID + "...");
 			// If there's no elementID provided, or if it's not found...
 			if (elementID == null || document.getElementById(elementID) == null){
-				console.log("No elementID provided/found. Trying H1...")
+				console.log("    No elementID provided/found. Trying H1...")
 				// Try using the <h1>
 				if (document.getElementsByTagName('h1')[0]){
-					console.log("Found H1.")
+					console.log("    Found H1.")
 					if (document.all){
 						var rawString = document.getElementsByTagName('h1')[0].innerText.toLowerCase();
 					}
@@ -149,7 +149,7 @@ window.onload = function(){
 				}
 				// Or try the <meta name="description" />
 				else{
-						console.log("No H1. Trying Meta-Description...");
+						console.log("      No H1. Trying Meta-Description...");
 						var metaTags = document.getElementsByTagName('meta');
 						for(var i = metaTags.length - 1; i >= 0; --i){
 
@@ -161,7 +161,7 @@ window.onload = function(){
 			}
 			// Hopefully there's an elementID, though:
 			else{
-				console.log("ElementID found. Preparing rawString...");
+				console.log("    ElementID found. Preparing rawString...");
 				if (document.all){
 					var rawString = document.getElementById(elementID).innerText.toLowerCase();
 				}
@@ -172,7 +172,7 @@ window.onload = function(){
 
 			var cleanString = rawString.replace(/the/g, "").replace(/and/g, "").replace(/to/g, "").replace(/how/g, "").replace(/if/g, "").replace(/review/g, "");
 
-			console.log("Cleaned Keywords: " + cleanString); // Remove for production
+			console.log("    Cleaned Keywords: " + cleanString); // Remove for production
 
 			return cleanString;
 		}
@@ -200,7 +200,7 @@ window.onload = function(){
 		}
 
 		// Get reviewCount and update the link
-		console.log("Get reviewCount and update the link.");
+		console.log("  Get reviewCount and update the link.");
 		var request = window.XDomainRequest ? new window.XDomainRequest() : new XMLHttpRequest();
 		var url = 'http://searchreviews.com/api/badge?reviews=' + srGetKeywords(resultsLink.rel) + '&time=' + new Date().getTime();
 
@@ -248,7 +248,7 @@ window.onload = function(){
 	var allSearchReviewsLinks = getElementsByClassName('searchReviewsLink');
 
 	for (var i = allSearchReviewsLinks.length - 1; i >= 0; --i){
-		console.log("Looping through links...");
+		console.log("Processing link...");
 		allSearchReviewsLinks[i].onclick = function(){
 			return false;
 		}

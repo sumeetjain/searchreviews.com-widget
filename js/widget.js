@@ -1,3 +1,5 @@
+console.log("# Begin widget.js");
+
 document.write('<link rel="stylesheet" href="http://sumeetjain.com/searchreviews.com-widget/css/widget.css" type="text/css" media="screen" title="SearchReviews.com" charset="utf-8">');
 
 // Developed by Robert Nyman, http://www.robertnyman.com
@@ -78,11 +80,14 @@ var getElementsByClassName = function (className, tag, elm){
 };
 
 window.onload = function(){
+	console.log("# Inside onload function.");
 	if (typeof console == "undefined") {
 	    window.console = {
 	        log: function () {}
 	    };
 	}	
+	
+	console.log("# Beginning main code run.");
 	
 	// Create the super-container
 	if(!document.getElementById('searchReviewsWidgetContainer')){

@@ -6,6 +6,8 @@
 	color: #454545;
 	background: url(sr_review_count_bg.png) no-repeat;
 	height: 26px;
+	width: 150px;
+	clear: both;
 	line-height: 40px;
 	padding-left: 17px;
 }

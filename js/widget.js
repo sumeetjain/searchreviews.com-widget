@@ -211,7 +211,8 @@ window.onload = function(){
 		function callback(){
 			srJSON = eval('(' + request.responseText + ')');
 			if (srJSON.reviewCount > 0){
-				resultsLink.innerHTML = 'Found ' + srJSON.reviewCount + ' reviews.';
+				var displayCount = srJSON.reviewCount > 100 ? "100+" : srJSON.reviewCount
+				resultsLink.innerHTML = 'Found ' + displayCount + ' reviews.';
 				resultsLink.onclick = function(){
 					srResultsWindow(srGetKeywords(resultsLink.rel));
 					document.getElementById('searchReviewsWidgetContainer').style.display = "block";

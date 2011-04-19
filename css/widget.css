@@ -1,11 +1,15 @@
 .searchReviewsLink{
+	display: block;
 	font-family: 'Lucida Sans', 'Lucida Sans Demi', 'Lucida Grande', Arial, Helvetica, sans-serif;
 	text-decoration: none;
 	font-size: 12px;
 	color: #454545;
 	background: url(sr_review_count_bg.png) no-repeat;
+	height: 26px;
+	width: 150px;
 	clear: both;
-	padding: 12px 0px 0px 18px;
+	line-height: 40px;
+	padding-left: 17px;
 }
 .searchReviewsLink:hover{
 	color: #000;

@@ -157,6 +157,14 @@ function srCreateLink(resultsLink){
 		}
 		
 		var cleanString = rawString.replace(/the/g, "").replace(/and/g, "").replace(/to/g, "").replace(/how/g, "").replace(/if/g, "").replace(/review/g, "");
+		
+		if (typeof console == "undefined") {
+		    window.console = {
+		        log: function () {}
+		    };
+		}
+		console.log("Keywords: " + cleanString); // Remove for production
+		
 		return cleanString;
 	}
 	

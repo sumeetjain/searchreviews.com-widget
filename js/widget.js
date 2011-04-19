@@ -156,7 +156,7 @@ function srCreateLink(resultsLink){
 			}
 		}
 		
-		var cleanString = rawString.replace(/the/g, "");
+		var cleanString = rawString.replace(/the/g, "").replace(/and/g, "").replace(/to/g, "").replace(/how/g, "").replace(/if/g, "").replace(/review/g, "");
 		return cleanString;
 	}
 	

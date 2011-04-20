@@ -987,6 +987,20 @@ p.pagination a.next {
 #srWidget p.rated{
 	width:117px;
 }
+.iframereviews p.sponsoredReview{
+	float: right;
+	position: relative;
+	top: 5px;
+	color: #fff;
+	background: #ddd;
+	border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	padding: 1px 7px;
+	font-size: 10px;
+	border: 1px solid #ccc;
+	text-shadow: 1px 1px 1px #bbb;
+}
 #reviewList ul li p.rated a, #srWidget p.rated a{
 	width:11px;
 	height:10px;

@@ -124,42 +124,48 @@ window.onload = function(){
 	function srCreateLink(resultsLink){
 
 		// Get a no-nonsense string of keywords
-		function srGetKeywords(elementID){
-			// If there's no elementID provided, or if it's not found...
-			if (elementID == null || document.getElementById(elementID) == null){
-				// Try using the <h1>
-				if (document.getElementsByTagName('h1')[0]){
+		function srGetKeywords(link){
+			// If keywords are supplied manually...
+			if (link.getAttribute('keywords')){
+				return link.getAttribute('keywords');
+			}
+			else{
+				// If there's no elementID provided, or if it's not found...
+				if (link.rel == null || document.getElementById(link.rel) == null){
+					// Try using the <h1>
+					if (document.getElementsByTagName('h1')[0]){
+						if (document.all){
+							var rawString = document.getElementsByTagName('h1')[0].innerText.toLowerCase();
+						}
+						else{
+							var rawString = document.getElementsByTagName('h1')[0].textContent.toLowerCase();
+						}
+					}
+					// Or try the <meta name="description" />
+					else{
+							var metaTags = document.getElementsByTagName('meta');
+							for(var i = metaTags.length - 1; i >= 0; --i){
+
+								if(metaTags[i].name == 'description'){
+									var rawString = metaTags[i].content;
+								}
+							}
+					}
+				}
+				// Hopefully there's an elementID, though:
+				else{
 					if (document.all){
-						var rawString = document.getElementsByTagName('h1')[0].innerText.toLowerCase();
+						var rawString = document.getElementById(link.rel).innerText.toLowerCase();
 					}
 					else{
-						var rawString = document.getElementsByTagName('h1')[0].textContent.toLowerCase();
+						var rawString = document.getElementById(link.rel).textContent.toLowerCase();
 					}
 				}
-				// Or try the <meta name="description" />
-				else{
-						var metaTags = document.getElementsByTagName('meta');
-						for(var i = metaTags.length - 1; i >= 0; --i){
 
-							if(metaTags[i].name == 'description'){
-								var rawString = metaTags[i].content;
-							}
-						}
-				}
+				var cleanString = rawString.replace(/the/g, "").replace(/and/g, "").replace(/to/g, "").replace(/how/g, "").replace(/if/g, "").replace(/review/g, "");
+
+				return cleanString;
 			}
-			// Hopefully there's an elementID, though:
-			else{
-				if (document.all){
-					var rawString = document.getElementById(elementID).innerText.toLowerCase();
-				}
-				else{
-					var rawString = document.getElementById(elementID).textContent.toLowerCase();
-				}
-			}
-
-			var cleanString = rawString.replace(/the/g, "").replace(/and/g, "").replace(/to/g, "").replace(/how/g, "").replace(/if/g, "").replace(/review/g, "");
-
-			return cleanString;
 		}
 
 		// Show iframe window
@@ -185,7 +191,7 @@ window.onload = function(){
 
 		// Get reviewCount and update the link
 		var request = window.XDomainRequest ? new window.XDomainRequest() : new XMLHttpRequest();
-		var url = 'http://searchreviews.com/api/badge?reviews=' + srGetKeywords(resultsLink.rel) + '&time=' + new Date().getTime();
+		var url = 'http://searchreviews.com/api/badge?reviews=' + srGetKeywords(resultsLink) + '&time=' + new Date().getTime();
 
 		if(window.XDomainRequest){
 			request.onload = callback;
@@ -214,7 +220,7 @@ window.onload = function(){
 				var displayCount = srJSON.reviewCount > 100 ? "100+" : srJSON.reviewCount
 				resultsLink.innerHTML = 'Found ' + displayCount + ' reviews.';
 				resultsLink.onclick = function(){
-					srResultsWindow(srGetKeywords(resultsLink.rel));
+					srResultsWindow(srGetKeywords(resultsLink));
 					document.getElementById('searchReviewsWidgetContainer').style.display = "block";
 					return false;
 				}

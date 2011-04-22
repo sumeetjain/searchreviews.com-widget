@@ -212,7 +212,7 @@ window.onload = function(){
 					callback();
 				}
 				else{
-					alert("Error: request.readyState=" + request.readyState + ", request.status=" + request.status);
+					// alert("Error: request.readyState=" + request.readyState + ", request.status=" + request.status);
 				}
 			}
 		}

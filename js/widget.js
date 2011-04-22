@@ -1,4 +1,5 @@
 window.sr_pid = '1234';
+window.sr_domain = 'foobar.com';
 
 document.write('<link rel="stylesheet" href="http://sumeetjain.com/searchreviews.com-widget/css/widget.css" type="text/css" media="screen" title="SearchReviews.com" charset="utf-8">');
 

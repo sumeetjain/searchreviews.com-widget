@@ -1,5 +1,4 @@
 window.sr_pid = '1234';
-window.sr_domain = 'foobar.com';
 
 document.write('<link rel="stylesheet" href="http://sumeetjain.com/searchreviews.com-widget/css/widget.css" type="text/css" media="screen" title="SearchReviews.com" charset="utf-8">');
 
@@ -178,7 +177,7 @@ window.onload = function(){
 
 			// Create the iframe that contains the results
 			var resultsIframe = document.createElement('iframe');
-			resultsIframe.src = 'http://searchreviews.com/customsearch.jsp?reviews=' + keywords + '&pid=' + window.sr_pid;
+			resultsIframe.src = 'http://searchreviews.com/customsearch.jsp?reviews=' + keywords + '&pid=' + window.sr_pid + '&domain=' + window.location.hostname;
 			// resultsIframe.src = 'sr/results.html?' + keywords;
 			resultsIframe.scrolling = 'no';
 			resultsIframe.frameBorder = 0;

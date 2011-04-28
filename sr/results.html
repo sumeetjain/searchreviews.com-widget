@@ -99,6 +99,20 @@ window.onload = function() {
             });
             $(this).prev().toggleClass('active', '');         
         });
+
+				$('a.more').click(function(){
+					$(this).parents('.reveal_short_excerpt').first().hide();
+					$(this).parents('div.smallpost').children('.reveal_full_review').show();
+					
+					return false;
+				});
+				
+				$('a.less').click(function(){
+					$(this).parents('.reveal_full_review').first().hide();
+					$(this).parents('div.smallpost').children('.reveal_short_excerpt').show();
+					
+					return false;
+				});
     });
 </script> 
 <!--[if IE 7]>
@@ -195,10 +209,10 @@ window.onload = function() {
 				<script type="text/javascript">
 					loadImage('http://images17.newegg.com/is/image/newegg/58-753-008-TS?$S300W$',"dyimg1");
 				</script>-->
-				<p class="smallpost">
+				<div class="smallpost">
 					...
 					<a href="/forward.jsp?reviewId=192936421&url=http://www.newegg.com/Product/Product.aspx?Item=N82E16858753008&SortField=2&SummaryType=0&Pagesize=500" onclick="javascript:_gaq.push(['_trackEvent', 'read_review', 'www.newegg.com', 'http://www.newegg.com/Product/Product.aspx?Item=N82E16858753008&SortField=2&SummaryType=0&Pagesize=500', 2]);" class="more" target="_blank">Read more</a>
-				</p>
+				</div>
 			  
 			  
 			  
@@ -271,12 +285,23 @@ window.onload = function() {
 				<script type="text/javascript">
 					loadImage('http://ecx.images-amazon.com/images/I/515EXoqVSlL._SL160_SL90_.jpg',"dyimg2");
 				</script>-->
-				<p class="smallpost">
-					This is a very durable product for an <em>IPad</em>.  I recommend the Otterbox defender for IPhone over defender for <em>IPad</em>.  The <em>IPad</em> defender is extremely heavy and bulky.
+				<div class="smallpost">
+					<div class="reveal_short_excerpt">
+						This is a very durable product for an <em>IPad</em>.  I recommend the Otterbox defender for IPhone over defender for <em>IPad</em>.  The <em>IPad</em> defender is extremely heavy and bulky.
 
-It will definitely defend the Back and sides of <em>IPad</em>, however, although you can use attachment for front, it is very awkward....
-					<a href="/forward.jsp?reviewId=6972379&url=http://www.amazon.com/Otterbox-APL2-iPAD1-20-C4OTR-iPad-Defender-Case/product-reviews/B003TVWNAM/ref=dp_db_cm_cr_acr_pop_hist_1?ie=UTF8&showViewpoints=0&filterBy=addOneStar" onclick="javascript:_gaq.push(['_trackEvent', 'read_review', 'www.amazon.com', 'http://www.amazon.com/Otterbox-APL2-iPAD1-20-C4OTR-iPad-Defender-Case/product-reviews/B003TVWNAM/ref=dp_db_cm_cr_acr_pop_hist_1?ie=UTF8&showViewpoints=0&filterBy=addOneStar', 2]);" class="more" target="_blank">Read more</a>
-				</p>
+	It will definitely defend the Back and sides of <em>IPad</em>, however, although you can use attachment for front, it is very awkward....
+						<a href="/forward.jsp?reviewId=6972379&url=http://www.amazon.com/Otterbox-APL2-iPAD1-20-C4OTR-iPad-Defender-Case/product-reviews/B003TVWNAM/ref=dp_db_cm_cr_acr_pop_hist_1?ie=UTF8&showViewpoints=0&filterBy=addOneStar" onclick="javascript:_gaq.push(['_trackEvent', 'read_review', 'www.amazon.com', 'http://www.amazon.com/Otterbox-APL2-iPAD1-20-C4OTR-iPad-Defender-Case/product-reviews/B003TVWNAM/ref=dp_db_cm_cr_acr_pop_hist_1?ie=UTF8&showViewpoints=0&filterBy=addOneStar', 2]);" class="more" target="_blank">Read more</a>
+					</div>
+					
+					<div class="reveal_full_review" style="display: none">
+						<p>This is a very durable product for an <em>IPad</em>.  I recommend the Otterbox defender for IPhone over defender for <em>IPad</em>.  The <em>IPad</em> defender is extremely heavy and bulky.</p>
+
+	<p>It will definitely defend the Back and sides of <em>IPad</em>, however, although you can use attachment for front, it is very awkward lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+	
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+						<a href="/forward.jsp?reviewId=6972379&url=http://www.amazon.com/Otterbox-APL2-iPAD1-20-C4OTR-iPad-Defender-Case/product-reviews/B003TVWNAM/ref=dp_db_cm_cr_acr_pop_hist_1?ie=UTF8&showViewpoints=0&filterBy=addOneStar" onclick="javascript:_gaq.push(['_trackEvent', 'read_review', 'www.amazon.com', 'http://www.amazon.com/Otterbox-APL2-iPAD1-20-C4OTR-iPad-Defender-Case/product-reviews/B003TVWNAM/ref=dp_db_cm_cr_acr_pop_hist_1?ie=UTF8&showViewpoints=0&filterBy=addOneStar', 2]);" class="less" target="_blank">Read less</a>
+					</div>
+				</div>
 			  
 			  
 			  
@@ -349,10 +374,20 @@ It will definitely defend the Back and sides of <em>IPad</em>, however, although
 				<script type="text/javascript">
 					loadImage('http://service.pcconnection.com/images/inhouse/10970852_90.jpg',"dyimg3");
 				</script>-->
-				<p class="smallpost">
-					Great price and perfect fit for my <em>Ipad</em>. I take it to work daily. This Item should be at the top of your search for an <em>Ipad</em> carrier....
-					<a href="/forward.jsp?reviewId=370382&url=http://reviews.pcconnection.com/8501/10970852/case-logic-10-2-netbook-ipad-attache-brown-reviews/reviews.htm" onclick="javascript:_gaq.push(['_trackEvent', 'read_review', 'reviews.pcconnection.com', 'http://reviews.pcconnection.com/8501/10970852/case-logic-10-2-netbook-ipad-attache-brown-reviews/reviews.htm', 2]);" class="more" target="_blank">Read more</a>
-				</p>
+				<div class="smallpost">
+					<div class="reveal_short_excerpt">
+						Great price and perfect fit for my <em>Ipad</em>. I take it to work daily. This Item should be at the top of your search for an <em>Ipad</em> carrier....
+						<a href="/forward.jsp?reviewId=370382&url=http://reviews.pcconnection.com/8501/10970852/case-logic-10-2-netbook-ipad-attache-brown-reviews/reviews.htm" onclick="javascript:_gaq.push(['_trackEvent', 'read_review', 'reviews.pcconnection.com', 'http://reviews.pcconnection.com/8501/10970852/case-logic-10-2-netbook-ipad-attache-brown-reviews/reviews.htm', 2]);" class="more" target="_blank">Read more</a>
+					</div>
+					
+					<div class="reveal_full_review" style="display: none">
+						<p>Great price and perfect fit for my <em>Ipad</em>. I take it to work daily. This Item should be at the top of your search for an <em>Ipad</em> carrier lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+						
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+						
+						<a href="/forward.jsp?reviewId=370382&url=http://reviews.pcconnection.com/8501/10970852/case-logic-10-2-netbook-ipad-attache-brown-reviews/reviews.htm" onclick="javascript:_gaq.push(['_trackEvent', 'read_review', 'reviews.pcconnection.com', 'http://reviews.pcconnection.com/8501/10970852/case-logic-10-2-netbook-ipad-attache-brown-reviews/reviews.htm', 2]);" class="less" target="_blank">Read less</a>
+					</div>
+				</div>
 			  
 			  
 			  
@@ -425,10 +460,10 @@ It will definitely defend the Back and sides of <em>IPad</em>, however, although
 				<script type="text/javascript">
 					loadImage('http://i.walmartimages.com/i/mp/00/08/58/54/21/0008585421805_P255062_100X100.jpg',"dyimg4");
 				</script>-->
-				<p class="smallpost">
+				<div class="smallpost">
 					I bought this case to carry my <em>iPad</em> in. It is perfect for this purpose!! I really like that it has handles to carry it....
 					<a href="/forward.jsp?reviewId=3589323&url=http://reviews.walmart.com/1336/14032250/case-logic-10-2-netbook-ipad-attach-reviews/reviews.htm" onclick="javascript:_gaq.push(['_trackEvent', 'read_review', 'reviews.walmart.com', 'http://reviews.walmart.com/1336/14032250/case-logic-10-2-netbook-ipad-attach-reviews/reviews.htm', 2]);" class="more" target="_blank">Read more</a>
-				</p>
+				</div>
 			  
 			  
 			  
@@ -501,10 +536,10 @@ It will definitely defend the Back and sides of <em>IPad</em>, however, although
 				<script type="text/javascript">
 					loadImage('http://i.ebayimg.com/13/!!d6zGp!BmM~$(KGrHqUOKj8EuiWokH-(BLuU605-yQ~~_7.JPG?set_id=89040003C1',"dyimg5");
 				</script>-->
-				<p class="smallpost">
+				<div class="smallpost">
 					<em>ipad</em> was come today thanks but he did not give tracking number to me  but today my <em>ipad</em> was come thanks...
 					<a href="/forward.jsp?reviewId=11312995&url=http://catalog.ebay.com/Apple-iPad-Wi-Fi-32GB-/80667779/r.html?rt=nc&_aset=2&_fcls=1&_pcategid=171485&_pcatid=12&_rptype=4295&_trk&_pgn=2" onclick="javascript:_gaq.push(['_trackEvent', 'read_review', 'catalog.ebay.com', 'http://catalog.ebay.com/Apple-iPad-Wi-Fi-32GB-/80667779/r.html?rt=nc&_aset=2&_fcls=1&_pcategid=171485&_pcatid=12&_rptype=4295&_trk&_pgn=2', 2]);" class="more" target="_blank">Read more</a>
-				</p>
+				</div>
 			  
 			  
 			  

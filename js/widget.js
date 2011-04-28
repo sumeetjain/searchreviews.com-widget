@@ -127,12 +127,7 @@ window.onload = function(){
 
 		// Get a no-nonsense string of keywords
 		function srGetKeywords(link){
-			// If keywords are supplied manually...
-			if (link.getAttribute('keywords')){
-				return link.getAttribute('keywords');
-			}
-			else{
-				// If there's no elementID provided, or if it's not found...
+			if (link.rel){
 				if (link.rel == null || document.getElementById(link.rel) == null){
 					// Try using the <h1>
 					if (document.getElementsByTagName('h1')[0]){
@@ -163,11 +158,14 @@ window.onload = function(){
 						var rawString = document.getElementById(link.rel).textContent.toLowerCase();
 					}
 				}
-
-				var cleanString = rawString.replace(/the/g, "").replace(/and/g, "").replace(/to/g, "").replace(/how/g, "").replace(/if/g, "").replace(/review/g, "");
-
-				return cleanString;
 			}
+			else{
+				var rawString = link.getAttribute('keywords');
+			}
+			
+			var cleanString = rawString.replace(/the/g, "").replace(/and/g, "").replace(/to/g, "").replace(/how/g, "").replace(/if/g, "").replace(/reviews/g, "").replace(/review/g, "");
+
+			return cleanString;
 		}
 
 		// Show iframe window
@@ -243,6 +241,14 @@ window.onload = function(){
 		allSearchReviewsLinks[i].onclick = function(){
 			return false;
 		}
+		
+		if (document.all){
+			allSearchReviewsLinks[i].setAttribute('keywords', allSearchReviewsLinks[i].innerText.toLowerCase());
+		}
+		else{
+			allSearchReviewsLinks[i].setAttribute('keywords', allSearchReviewsLinks[i].textContent.toLowerCase());
+		}
+		
 		srCreateLink(allSearchReviewsLinks[i]);
 	}
 }

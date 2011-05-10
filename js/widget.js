@@ -163,7 +163,9 @@ window.onload = function(){
 				var rawString = link.getAttribute('keywords');
 			}			
 
-			return rawString;
+			var cleanString = rawString.replace(/reviews/g, "").replace(/review/g, "");
+
+			return cleanString;
 		}
 
 		// Show iframe window
@@ -196,46 +198,55 @@ window.onload = function(){
 		}
 
 		// Get reviewCount and update the link
-		var request = window.XDomainRequest ? new window.XDomainRequest() : new XMLHttpRequest();
-		var url = 'http://searchreviews.com/api/badge?reviews=' + srGetKeywords(resultsLink) + '&time=' + new Date().getTime();
+		try{
+			var request = window.XDomainRequest ? new window.XDomainRequest() : new XMLHttpRequest();
+			var url = 'http://searchreviews.com/api/badge?reviews=' + srGetKeywords(resultsLink) + '&time=' + new Date().getTime();
 
-		if(window.XDomainRequest){
-			request.onload = callback;
-			request.open("GET", url, true);
-		}
-		else{
-			request.open('GET', url, true);
-			request.onreadystatechange = callbackCheck;
-		}
-		request.send();
-
-		function callbackCheck(){
-			if (request.readyState == 4){
-				if (request.status == 200){
-					callback();
-				}
-				else{
-					// alert("Error: request.readyState=" + request.readyState + ", request.status=" + request.status);
-				}
-			}
-		}
-
-		function callback(){
-			srJSON = eval('(' + request.responseText + ')');
-			if (srJSON.reviewCount > 0){
-				var displayCount = srJSON.reviewCount > 100 ? "100+" : srJSON.reviewCount
-				resultsLink.innerHTML = 'Found ' + displayCount + ' reviews.';
-				resultsLink.onclick = function(){
-					srResultsWindow(resultsLink);
-					document.getElementById('searchReviewsWidgetContainer').style.display = "block";
-					return false;
-				}
+			if(window.XDomainRequest){
+				request.onload = callback;
+				request.open("GET", url, true);
 			}
 			else{
-				resultsLink.innerHTML = 'Search for reviews.';
-				resultsLink.onclick = function(){
-					window.location = "http://searchreviews.com";
+				request.open('GET', url, true);
+				request.onreadystatechange = callbackCheck;
+			}
+			request.send();
+
+			function callbackCheck(){
+				if (request.readyState == 4){
+					if (request.status == 200){
+						callback();
+					}
+					else{
+						// alert("Error: request.readyState=" + request.readyState + ", request.status=" + request.status);
+					}
 				}
+			}
+
+			function callback(){
+				srJSON = eval('(' + request.responseText + ')');
+				if (srJSON.reviewCount > 0){
+					var displayCount = srJSON.reviewCount > 100 ? "100+" : srJSON.reviewCount
+					resultsLink.innerHTML = 'Found ' + displayCount + ' reviews.';
+					resultsLink.onclick = function(){
+						srResultsWindow(resultsLink);
+						document.getElementById('searchReviewsWidgetContainer').style.display = "block";
+						return false;
+					}
+				}
+				else{
+					resultsLink.innerHTML = 'Search for reviews.';
+					resultsLink.onclick = function(){
+						window.location = "http://searchreviews.com";
+					}
+				}
+			}
+		}
+		catch (err){ // For browsers before IE8
+			resultsLink.onclick = function(){
+				srResultsWindow(resultsLink);
+				document.getElementById('searchReviewsWidgetContainer').style.display = "block";
+				return false;
 			}
 		}
 	}

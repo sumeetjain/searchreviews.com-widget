@@ -3,17 +3,19 @@
 	font-family: 'Lucida Sans', 'Lucida Sans Demi', 'Lucida Grande', Arial, Helvetica, sans-serif;
 	text-decoration: none;
 	font-size: 12px;
-	color: #454545;
-	background: url(sr_review_count_bg.png) no-repeat;
+	color: #333;
+	background: url(http://c448112.r12.cf2.rackcdn.com/widget/images/sr_review_count_bg.png) no-repeat;
 	height: 26px;
 	width: 150px;
 	clear: both;
 	line-height: 40px;
-	padding-left: 17px;
+	padding-left: 19px;
+	margin-bottom: 10px;
+	text-shadow: 0px 1px 1px #ccc;
 }
 .searchReviewsLink:hover{
 	color: #000;
-	text-decoration: none;
+	text-decoration: underline;
 }
 #searchReviewsWidgetContainer{
 	position: fixed;
@@ -65,14 +67,14 @@
 	margin: 3px 3px 3px 0;
 }
 #searchReviewsCloseLink{
-	background: url(sr_close_button.gif) no-repeat 0 0;
+	background: url(http://c448112.r12.cf2.rackcdn.com/widget/images/sr_close_button.gif) no-repeat 0 0;
 }
 #searchReviewsCloseLink:hover{
-	background: url(sr_close_button.gif) no-repeat 0 -17px;
+	background: url(http://c448112.r12.cf2.rackcdn.com/widget/images/sr_close_button.gif) no-repeat 0 -17px;
 }
 #searchReviewsExpandLink{
-	background: url(sr_expand_button.gif) no-repeat 0 0;
+	background: url(http://c448112.r12.cf2.rackcdn.com/widget/images/sr_expand_button.gif) no-repeat 0 0;
 }
 #searchReviewsExpandLink:hover{
-	background: url(sr_expand_button.gif) no-repeat 0 -17px;
+	background: url(http://c448112.r12.cf2.rackcdn.com/widget/images/sr_expand_button.gif) no-repeat 0 -17px;
 }

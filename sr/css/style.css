@@ -825,6 +825,11 @@ a#em2c:hover {
 	display:block;
 	float:left;
 }
+.iframereviews p.monetizationDisclaimer{
+	margin-right: 275px;
+	font-size: 10px;
+	color: #999;
+}
 p.pagination {
 	display:block;
 	float:right;
@@ -951,6 +956,14 @@ p.pagination a.next {
 	font-size:11px;
 	color:#333;
 }
+.iframereviews #reviewList ul li p.prdTitle a{
+	font:12px Arial, Helvetica, sans-serif;
+	color:#45D0DF;
+	line-height:21px;
+}
+.iframereviews #reviewList ul li p.prdTitle a:hover{
+	color: #33A0BD;
+}
 #reviewList ul li div.level2, #newsList ul li div.level2 {
 	width:100%;
 	float:left;
@@ -1007,6 +1020,24 @@ p.pagination a.next {
 	font-size: 10px;
 	border: 1px solid #ccc;
 	text-shadow: 1px 1px 1px #bbb;
+}
+.iframereviews #reviewList ul li p.prdTitle a.learnMoreLink{
+	position: relative;
+	left: 3px;
+	color: #fff;
+	background: #F7BCA3;
+	border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	padding: 1px 7px;
+	font-size: 11px;
+	border: 1px solid #F39770;
+	text-shadow: 1px 1px 1px #bbb;
+}
+.iframereviews #reviewList ul li p.prdTitle a.learnMoreLink:hover{
+	color: #fff;
+	background: #E8865F;
+	border: 1px solid #D45B32;
 }
 #reviewList ul li p.rated a, #srWidget p.rated a{
 	width:11px;

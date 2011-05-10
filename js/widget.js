@@ -1,6 +1,6 @@
 window.sr_pid = '1234';
 
-document.write('<link rel="stylesheet" href="http://sumeetjain.com/searchreviews.com-widget/css/widget.css" type="text/css" media="screen" title="SearchReviews.com" charset="utf-8">');
+document.write('<link rel="stylesheet" href="http://c448112.r12.cf2.rackcdn.com/widget/css/widget.css" type="text/css" media="screen" title="SearchReviews.com" charset="utf-8">');
 
 // Developed by Robert Nyman, http://www.robertnyman.com
 // Code/licensing: http://code.google.com/p/getelementsbyclassname/
@@ -161,21 +161,27 @@ window.onload = function(){
 			}
 			else{
 				var rawString = link.getAttribute('keywords');
-			}
-			
-			var cleanString = rawString.replace(/the/g, "").replace(/and/g, "").replace(/to/g, "").replace(/how/g, "").replace(/if/g, "").replace(/reviews/g, "").replace(/review/g, "");
+			}			
 
-			return cleanString;
+			return rawString;
 		}
 
 		// Show iframe window
-		function srResultsWindow(keywords){
+		function srResultsWindow(link){
+			// Get the query string from the link
+			if (link.href.indexOf("?") > -1){
+				var qString = link.href.substring(link.href.indexOf("?") + 1) + "&";
+			}
+			else{
+				var qString = '';
+			}
+			
 			// Create another container for the overlay
 			var resultsWindow = document.createElement('div');
 
 			// Create the iframe that contains the results
 			var resultsIframe = document.createElement('iframe');
-			resultsIframe.src = 'http://searchreviews.com/customsearch.jsp?reviews=' + keywords + '&pid=' + window.sr_pid + '&domain=' + window.location.hostname;
+			resultsIframe.src = 'http://searchreviews.com/customsearch.jsp?' + qString + 'reviews=' + srGetKeywords(link) + '&pid=' + window.sr_pid + '&domain=' + window.location.hostname;
 			// resultsIframe.src = 'sr/results.html?' + keywords;
 			resultsIframe.scrolling = 'no';
 			resultsIframe.frameBorder = 0;
@@ -186,7 +192,7 @@ window.onload = function(){
 
 			// Change the "Expand" link to go to the right deep link
 			var expandResults = document.getElementById('searchReviewsExpandLink');
-			expandResults.href = "http://searchreviews.com/search.jsp?reviews=" + keywords;
+			expandResults.href = "http://searchreviews.com/search.jsp?reviews=" + srGetKeywords(link);
 		}
 
 		// Get reviewCount and update the link
@@ -220,7 +226,7 @@ window.onload = function(){
 				var displayCount = srJSON.reviewCount > 100 ? "100+" : srJSON.reviewCount
 				resultsLink.innerHTML = 'Found ' + displayCount + ' reviews.';
 				resultsLink.onclick = function(){
-					srResultsWindow(srGetKeywords(resultsLink));
+					srResultsWindow(resultsLink);
 					document.getElementById('searchReviewsWidgetContainer').style.display = "block";
 					return false;
 				}

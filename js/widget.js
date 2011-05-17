@@ -201,17 +201,7 @@ window.onload = function(){
 		try{
 			var request = window.XDomainRequest ? new window.XDomainRequest() : new XMLHttpRequest();
 			var url = 'http://searchreviews.com/api/badge?reviews=' + srGetKeywords(resultsLink) + '&time=' + new Date().getTime();
-
-			if(window.XDomainRequest){
-				request.onload = callback;
-				request.open("GET", url, true);
-			}
-			else{
-				request.open('GET', url, true);
-				request.onreadystatechange = callbackCheck;
-			}
-			request.send();
-
+			
 			function callbackCheck(){
 				if (request.readyState == 4){
 					if (request.status == 200){
@@ -241,6 +231,16 @@ window.onload = function(){
 					}
 				}
 			}
+
+			if(window.XDomainRequest){
+				request.onload = callback;
+				request.open("GET", url, true);
+			}
+			else{
+				request.open('GET', url, true);
+				request.onreadystatechange = callbackCheck;
+			}
+			request.send();
 		}
 		catch (err){ // For browsers before IE8
 			resultsLink.onclick = function(){

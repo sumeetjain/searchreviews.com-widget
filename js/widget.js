@@ -137,8 +137,6 @@ var getElementsByClassName = function (className, tag, elm){
 };
 
 window.onload = function(){
-	fix_flash();
-	
 	// Create the super-container
 	if(!document.getElementById('searchReviewsWidgetContainer')){
 		var resultsContainer = document.createElement('div');
@@ -334,4 +332,6 @@ window.onload = function(){
 		
 		srCreateLink(allSearchReviewsLinks[i]);
 	}
+	
+	fix_flash();
 }

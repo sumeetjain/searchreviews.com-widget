@@ -1,6 +1,22 @@
-window.sr_pid = '1234';
+window.sr_pid = 'E73VRpaZdYs=';
 
-document.write('<link rel="stylesheet" href="http://c448112.r12.cf2.rackcdn.com/widget/css/widget.css" type="text/css" media="screen" title="SearchReviews.com" charset="utf-8">');
+document.write('<link rel="stylesheet" href="css/widget.css" type="text/css" media="screen" title="SearchReviews.com" charset="utf-8">');
+
+// Window dimensions
+window.viewWidth = 630;
+window.viewHeight = 460;
+if (document.body && document.body.offsetWidth){
+	window.viewWidth = document.body.offsetWidth;
+	window.viewHeight = document.body.offsetHeight;
+}
+if (document.compatMode=='CSS1Compat' && document.documentElement && document.documentElement.offsetWidth){
+	window.viewWidth = document.documentElement.offsetWidth;
+	window.viewHeight = document.documentElement.offsetHeight;
+}
+if (window.innerWidth && window.innerHeight){
+	window.viewWidth = window.innerWidth;
+	window.viewHeight = window.innerHeight;
+}
 
 // Developed by Robert Nyman, http://www.robertnyman.com
 // Code/licensing: http://code.google.com/p/getelementsbyclassname/
@@ -86,9 +102,15 @@ window.onload = function(){
 		resultsContainer.id = 'searchReviewsWidgetContainer';
 		resultsContainer.style.display = "none";
 		
+		if(resultsContainer.style.width = window.viewWidth / 1.2 + "px"){
+			resultsContainer.style.marginLeft = (window.viewWidth / 1.2) / -2 + "px";
+		}
+		resultsContainer.style.height = window.viewHeight / 1.2 + "px";
+		
 		// Create a div for the eventual iframe
 		var resultsSubcontainer = document.createElement('div');
 		resultsSubcontainer.id = 'searchReviewsWidgetSubcontainer';
+		resultsSubcontainer.style.height = window.viewHeight / 1.2 * 0.97 + "px"
 
 		// Create the Close Overlay link
 		function closeResults(){
@@ -124,7 +146,6 @@ window.onload = function(){
 	}
 
 	function srCreateLink(resultsLink){
-
 		// Get a no-nonsense string of keywords
 		function srGetKeywords(link){
 			if (link.rel){
@@ -183,9 +204,9 @@ window.onload = function(){
 
 			// Create the iframe that contains the results
 			var resultsIframe = document.createElement('iframe');
-			resultsIframe.src = 'http://searchreviews.com/customsearch.jsp?' + qString + 'reviews=' + srGetKeywords(link) + '&pid=' + window.sr_pid + '&domain=' + window.location.hostname;
-			// resultsIframe.src = 'sr/results.html?' + keywords;
-			resultsIframe.scrolling = 'no';
+			// resultsIframe.src = 'http://searchreviews.com/customsearch.jsp?' + qString + 'reviews=' + srGetKeywords(link) + '&pId=' + window.sr_pid + '&domain=' + window.location.hostname;
+			resultsIframe.src = 'sr/results.html';
+			// resultsIframe.scrolling = 'no';
 			resultsIframe.frameBorder = 0;
 
 			// Add the above element to the overlay
@@ -197,6 +218,13 @@ window.onload = function(){
 			expandResults.href = "http://searchreviews.com/search.jsp?reviews=" + srGetKeywords(link);
 		}
 
+		// Trigger the iframe before all else
+		resultsLink.onclick = function(){
+			srResultsWindow(resultsLink);
+			document.getElementById('searchReviewsWidgetContainer').style.display = "block";
+			return false;
+		}
+		
 		// Get reviewCount and update the link
 		try{
 			var request = window.XDomainRequest ? new window.XDomainRequest() : new XMLHttpRequest();
@@ -212,17 +240,12 @@ window.onload = function(){
 					}
 				}
 			}
-
+			
 			function callback(){
 				srJSON = eval('(' + request.responseText + ')');
 				if (srJSON.reviewCount > 0){
 					var displayCount = srJSON.reviewCount > 100 ? "100+" : srJSON.reviewCount
 					resultsLink.innerHTML = 'Found ' + displayCount + ' reviews.';
-					resultsLink.onclick = function(){
-						srResultsWindow(resultsLink);
-						document.getElementById('searchReviewsWidgetContainer').style.display = "block";
-						return false;
-					}
 				}
 				else{
 					resultsLink.innerHTML = 'Search for reviews.';

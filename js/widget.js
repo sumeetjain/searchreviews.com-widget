@@ -2,6 +2,47 @@ window.sr_pid = 'E73VRpaZdYs=';
 
 document.write('<link rel="stylesheet" href="css/widget.css" type="text/css" media="screen" title="SearchReviews.com" charset="utf-8">');
 
+// Fix Flash
+// http://stackoverflow.com/questions/1168494/how-do-i-programmatically-set-all-objects-to-have-the-wmode-set-to-opaque
+function fix_flash() {
+    // loop through every embed tag on the site
+    var embeds = document.getElementsByTagName('embed');
+    for(i=0; i<embeds.length; i++)  {
+        embed = embeds[i];
+        var new_embed;
+        // everything but Firefox & Konqueror
+        if(embed.outerHTML) {
+            var html = embed.outerHTML;
+            // replace an existing wmode parameter
+            if(html.match(/wmode\s*=\s*('|")[a-zA-Z]+('|")/i))
+                new_embed = html.replace(/wmode\s*=\s*('|")window('|")/i,"wmode='opaque'");
+            // add a new wmode parameter
+            else 
+                new_embed = html.replace(/<embed\s/i,"<embed wmode='opaque' ");
+            // replace the old embed object with the fixed version
+            embed.insertAdjacentHTML('beforeBegin',new_embed);
+            embed.parentNode.removeChild(embed);
+        } else {
+            // cloneNode is buggy in some versions of Safari & Opera, but works fine in FF
+            new_embed = embed.cloneNode(true);
+            if(!new_embed.getAttribute('wmode') || new_embed.getAttribute('wmode').toLowerCase()=='window')
+                new_embed.setAttribute('wmode','opaque');
+            embed.parentNode.replaceChild(new_embed,embed);
+        }
+    }
+    // loop through every object tag on the site
+    var elementToAppend = document.createElement('param');
+    elementToAppend.setAttribute('name', 'wmode');
+    elementToAppend.setAttribute('value', 'opaque');
+    var objects = document.getElementsByTagName('object');
+    for (var i = 0; i < objects.length; i++) {
+        var newObject = objects[i].cloneNode(true);
+        elementToAppend = elementToAppend.cloneNode(true);
+        newObject.appendChild(elementToAppend);
+        objects[i].parentNode.replaceChild(newObject, objects[i]);
+    }
+}          
+
 // Window dimensions
 window.viewWidth = 630;
 window.viewHeight = 460;
@@ -96,6 +137,8 @@ var getElementsByClassName = function (className, tag, elm){
 };
 
 window.onload = function(){
+	fix_flash();
+	
 	// Create the super-container
 	if(!document.getElementById('searchReviewsWidgetContainer')){
 		var resultsContainer = document.createElement('div');

@@ -245,8 +245,8 @@ window.onload = function(){
 
 			// Create the iframe that contains the results
 			var resultsIframe = document.createElement('iframe');
-			// resultsIframe.src = 'http://searchreviews.com/customsearch.jsp?' + qString + 'reviews=' + srGetKeywords(link) + '&pId=' + window.sr_pid + '&domain=' + window.location.hostname;
-			resultsIframe.src = 'sr/results.html';
+			resultsIframe.src = 'http://searchreviews.com/customsearch.jsp?' + qString + 'reviews=' + srGetKeywords(link) + '&pId=' + window.sr_pid + '&domain=' + window.location.hostname;
+			// resultsIframe.src = 'sr/results.html';
 			// resultsIframe.scrolling = 'no';
 			resultsIframe.frameBorder = 0;
 
@@ -325,9 +325,19 @@ window.onload = function(){
 		
 		if (document.all){
 			allSearchReviewsLinks[i].setAttribute('keywords', allSearchReviewsLinks[i].innerText.toLowerCase());
+			if (allSearchReviewsLinks[i].innerText.toLowerCase().indexOf("your keywords") > -1){
+				if (!allSearchReviewsLinks[i].rel){
+					allSearchReviewsLinks[i].setAttribute('rel', 'nonExistentElement1234');
+				}
+			}
 		}
 		else{
 			allSearchReviewsLinks[i].setAttribute('keywords', allSearchReviewsLinks[i].textContent.toLowerCase());
+			if (allSearchReviewsLinks[i].textContent.toLowerCase().indexOf("your keywords") > -1){
+				if (allSearchReviewsLinks[i].rel == null || document.getElementById(allSearchReviewsLinks[i].rel) == null){
+					allSearchReviewsLinks[i].setAttribute('rel', 'nonExistentElement1234');
+				}
+			}
 		}
 		
 		srCreateLink(allSearchReviewsLinks[i]);

@@ -226,8 +226,7 @@ window.onload = function(){
 			}			
 
 			var cleanString = rawString.replace(/reviews/g, "").replace(/review/g, "");
-
-			return cleanString;
+			return encodeURIComponent(cleanString);
 		}
 
 		// Show iframe window

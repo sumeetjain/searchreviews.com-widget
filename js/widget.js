@@ -191,13 +191,53 @@ window.onload = function(){
 		function srGetKeywords(link){
 			if (link.rel){
 				if (link.rel == null || document.getElementById(link.rel) == null){
-					// Try using the <h1>
+					// Try using the header tags
 					if (document.getElementsByTagName('h1')[0]){
 						if (document.all){
 							var rawString = document.getElementsByTagName('h1')[0].innerText.toLowerCase();
 						}
 						else{
 							var rawString = document.getElementsByTagName('h1')[0].textContent.toLowerCase();
+						}
+					}
+					else if (document.getElementsByTagName('h2')[0]){
+						if (document.all){
+							var rawString = document.getElementsByTagName('h2')[0].innerText.toLowerCase();
+						}
+						else{
+							var rawString = document.getElementsByTagName('h2')[0].textContent.toLowerCase();
+						}
+					}
+					else if (document.getElementsByTagName('h3')[0]){
+						if (document.all){
+							var rawString = document.getElementsByTagName('h3')[0].innerText.toLowerCase();
+						}
+						else{
+							var rawString = document.getElementsByTagName('h3')[0].textContent.toLowerCase();
+						}
+					}
+					else if (document.getElementsByTagName('h4')[0]){
+						if (document.all){
+							var rawString = document.getElementsByTagName('h4')[0].innerText.toLowerCase();
+						}
+						else{
+							var rawString = document.getElementsByTagName('h4')[0].textContent.toLowerCase();
+						}
+					}
+					else if (document.getElementsByTagName('h5')[0]){
+						if (document.all){
+							var rawString = document.getElementsByTagName('h5')[0].innerText.toLowerCase();
+						}
+						else{
+							var rawString = document.getElementsByTagName('h5')[0].textContent.toLowerCase();
+						}
+					}
+					else if (document.getElementsByTagName('h6')[0]){
+						if (document.all){
+							var rawString = document.getElementsByTagName('h6')[0].innerText.toLowerCase();
+						}
+						else{
+							var rawString = document.getElementsByTagName('h6')[0].textContent.toLowerCase();
 						}
 					}
 					// Or try the <meta name="description" />

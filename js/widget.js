@@ -43,20 +43,37 @@ function fix_flash() {
     }
 }          
 
+
 // Window dimensions
-window.viewWidth = 630;
-window.viewHeight = 460;
-if (document.body && document.body.offsetWidth){
-	window.viewWidth = document.body.offsetWidth;
-	window.viewHeight = document.body.offsetHeight;
+function createSizes(){
+	if (document.body && document.body.offsetWidth){
+		window.viewWidth = document.body.offsetWidth;
+		window.viewHeight = document.body.offsetHeight;
+	}
+	if (document.compatMode=='CSS1Compat' && document.documentElement && document.documentElement.offsetWidth){
+		window.viewWidth = document.documentElement.offsetWidth;
+		window.viewHeight = document.documentElement.offsetHeight;
+	}
+	if (window.innerWidth && window.innerHeight){
+		window.viewWidth = window.innerWidth;
+		window.viewHeight = window.innerHeight;
+	}
 }
-if (document.compatMode=='CSS1Compat' && document.documentElement && document.documentElement.offsetWidth){
-	window.viewWidth = document.documentElement.offsetWidth;
-	window.viewHeight = document.documentElement.offsetHeight;
-}
-if (window.innerWidth && window.innerHeight){
-	window.viewWidth = window.innerWidth;
-	window.viewHeight = window.innerHeight;
+createSizes();
+
+window.onresize = function(event){
+	createSizes();
+	
+	var resultsContainer = document.getElementById('searchReviewsWidgetContainer');
+	
+	if(resultsContainer.style.width = window.viewWidth / 1.2 + "px"){
+		resultsContainer.style.marginLeft = (window.viewWidth / 1.2) / -2 + "px";
+	}
+	resultsContainer.style.height = window.viewHeight / 1.2 + "px";
+	
+	// Create a div for the eventual iframe
+	var resultsSubcontainer = document.getElementById('searchReviewsWidgetSubcontainer');
+	resultsSubcontainer.style.height = window.viewHeight / 1.2 * 0.97 + "px"
 }
 
 // Developed by Robert Nyman, http://www.robertnyman.com
